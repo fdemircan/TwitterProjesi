@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:1715/Twitter.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/TwitterDeneme1" />
+  <xs:element name="KullaniciKayit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="kullaniciAdi" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="parola" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ad" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="soyad" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="KullaniciKayitResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="KullaniciKayitResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="KullaniciGiris">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="kullanici" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="parola" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="KullaniciGirisResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="KullaniciGirisResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TwitAt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="icerik" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="uyeID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TwitAtResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/TwitterDeneme1" minOccurs="0" name="TwitAtResult" nillable="true" type="q1:Twit" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TwitFav">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="uyeID" type="xs:int" />
+        <xs:element minOccurs="0" name="twitID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TwitFavResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TwitFavResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UyeTakip">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="takipEdenID" type="xs:int" />
+        <xs:element minOccurs="0" name="takipEdilenID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UyeTakipResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UyeTakipResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="tumTwitleriCek">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="uyeID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="tumTwitleriCekResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/TwitterDeneme1" minOccurs="0" name="tumTwitleriCekResult" nillable="true" type="q2:ArrayOfTwit" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Kullanicilar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="uyeID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="KullanicilarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/TwitterDeneme1" minOccurs="0" name="KullanicilarResult" nillable="true" type="q3:ArrayOfKullanici" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,20 @@
+\\Mac\Home\Desktop\TwitterDeneme1\TwitterDeneme1\bin\TwitterDeneme1.dll.config
+\\Mac\Home\Desktop\TwitterDeneme1\TwitterDeneme1\bin\TwitterDeneme1.dll
+\\Mac\Home\Desktop\TwitterDeneme1\TwitterDeneme1\bin\TwitterDeneme1.pdb
+\\Mac\Home\Desktop\TwitterDeneme1\TwitterDeneme1\bin\EntityFramework.dll
+\\Mac\Home\Desktop\TwitterDeneme1\TwitterDeneme1\bin\EntityFramework.SqlServer.dll
+\\Mac\Home\Desktop\TwitterDeneme1\TwitterDeneme1\bin\EntityFramework.xml
+\\Mac\Home\Desktop\TwitterDeneme1\TwitterDeneme1\bin\EntityFramework.SqlServer.xml
+\\Mac\Home\Desktop\TwitterDeneme1\TwitterDeneme1\obj\Debug\TwitterDeneme1.csprojResolveAssemblyReference.cache
+\\Mac\Home\Desktop\TwitterDeneme1\TwitterDeneme1\obj\Debug\TwitterDeneme1.dll
+\\Mac\Home\Desktop\TwitterDeneme1\TwitterDeneme1\obj\Debug\TwitterDeneme1.pdb
+C:\Users\yakup\Desktop\adsız klasör\TwitterDeneme1\TwitterDeneme1\bin\TwitterDeneme1.dll.config
+C:\Users\yakup\Desktop\adsız klasör\TwitterDeneme1\TwitterDeneme1\bin\TwitterDeneme1.dll
+C:\Users\yakup\Desktop\adsız klasör\TwitterDeneme1\TwitterDeneme1\bin\TwitterDeneme1.pdb
+C:\Users\yakup\Desktop\adsız klasör\TwitterDeneme1\TwitterDeneme1\bin\EntityFramework.dll
+C:\Users\yakup\Desktop\adsız klasör\TwitterDeneme1\TwitterDeneme1\bin\EntityFramework.SqlServer.dll
+C:\Users\yakup\Desktop\adsız klasör\TwitterDeneme1\TwitterDeneme1\bin\EntityFramework.xml
+C:\Users\yakup\Desktop\adsız klasör\TwitterDeneme1\TwitterDeneme1\bin\EntityFramework.SqlServer.xml
+C:\Users\yakup\Desktop\adsız klasör\TwitterDeneme1\TwitterDeneme1\obj\Debug\TwitterDeneme1.csprojResolveAssemblyReference.cache
+C:\Users\yakup\Desktop\adsız klasör\TwitterDeneme1\TwitterDeneme1\obj\Debug\TwitterDeneme1.dll
+C:\Users\yakup\Desktop\adsız klasör\TwitterDeneme1\TwitterDeneme1\obj\Debug\TwitterDeneme1.pdb

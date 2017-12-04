@@ -1,2 +1,2 @@
 # TwitterProjesi
-Web Servisleri kullanılarak yapılmış Twitter benzeri uygulama
+Web Servisi kullanılarak yapılmış Twitter benzeri uygulama.

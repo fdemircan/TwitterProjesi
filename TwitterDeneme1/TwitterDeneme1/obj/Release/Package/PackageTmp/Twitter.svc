@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="TwitterDeneme1.Twitter" CodeBehind="Twitter.svc.cs" %>

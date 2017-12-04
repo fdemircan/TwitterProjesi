@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/TwitterDeneme1" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TwitterDeneme1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Twit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="atilmaTarihi" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="icerik" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="kAdi" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="twitID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Twit" nillable="true" type="tns:Twit" />
+  <xs:complexType name="ArrayOfTwit">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Twit" nillable="true" type="tns:Twit" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTwit" nillable="true" type="tns:ArrayOfTwit" />
+  <xs:complexType name="ArrayOfKullanici">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Kullanici" nillable="true" type="tns:Kullanici" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKullanici" nillable="true" type="tns:ArrayOfKullanici" />
+  <xs:complexType name="Kullanici">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="kullaniciAdi" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="parola" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="uyeID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Kullanici" nillable="true" type="tns:Kullanici" />
+</xs:schema>

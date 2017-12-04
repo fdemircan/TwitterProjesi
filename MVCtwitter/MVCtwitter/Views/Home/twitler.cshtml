@@ -1,0 +1,70 @@
+﻿
+@{
+    ViewBag.Title = "twitler";
+}
+
+<body class="hold-transition skin-blue sidebar-mini">
+
+    <div class="box box-success">
+        <div class="box-header">
+            <div class="input-group">
+                <input class="form-control" placeholder="Twit at.." id="twitIcerik">
+                <div class="input-group-btn">
+                    <button type="button" class="btn btn-success" id="btnTweet">Tweetle</button>
+                </div>
+            </div>
+        </div>
+        <div class="box-body chat" id="twit">
+            @foreach (MVCtwitter.ServiceReference.Twit t in ViewBag.twitler)
+            {
+                <div class="item">
+                    <img src="~/Content/Twitter.png" alt="kullaniciResmi" class="online">
+                    <p class="message">
+                        <a href="#" class="name">
+                            @t.kAdi
+                        </a>
+                        @t.icerik
+                    </p>
+                    <div class="text-muted">
+                        <div class="pull-right">
+                            <a href="#" onclick="Begen(@t.twitID)"><i class="fa fa-heart" aria-hidden="true" id="heart"></i></a>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+    <!-- Bootstrap 3.3.6 -->
+    @section scripts{
+    <script>
+            var id ;
+            function Begen(twitID) {
+                id = twitID;
+                $.post("/Home/twitiFavaEkle",{twitID:id}, function(data){
+                    if (data == true)
+                        location.href = "/Home/TwitFav";
+                });
+                
+            }
+
+          
+        $("#btnTweet").click(function () {
+            var icerik = $("#twitIcerik").val();
+
+            $.post("/Home/TwitAt", { icerik: icerik }, function (data) {
+                $("#twit").prepend('<div class="item"><img src="/Content/Twitter.png" alt="kullaniciResmi" class="online">' +
+                    '<p class="message"><a href="#" class="name">'
+                    + data.kAdi +
+                    '</a>'
+                    + data.icerik +
+                    '</p><div class="text-muted"><div class="pull-right"><a href="#" onclick=""><i class="fa fa-heart" id="heart" aria-hidden="true"></i></a>'
+                    + '</div></div>');
+            });
+        });
+    </script>
+    }
+    
+</body>
+
+

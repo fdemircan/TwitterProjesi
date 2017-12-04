@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbTwitterModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tblTwit">
+    <Key>
+      <PropertyRef Name="twitID" />
+    </Key>
+    <Property Name="twitID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="icerik" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="atilmaTarihi" Type="DateTime" Precision="0" />
+    <Property Name="uyeID" Type="Int32" />
+    <NavigationProperty Name="tblUye" Relationship="Self.fk_b" FromRole="tblTwit" ToRole="tblUye" />
+  </EntityType>
+  <EntityType Name="tblTwitFav">
+    <Key>
+      <PropertyRef Name="twitFavID" />
+    </Key>
+    <Property Name="twitFavID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uyeID" Type="Int32" />
+    <Property Name="twitID" Type="Int32" />
+    <NavigationProperty Name="tblUye" Relationship="Self.fk_c" FromRole="tblTwitFav" ToRole="tblUye" />
+  </EntityType>
+  <EntityType Name="tblUye">
+    <Key>
+      <PropertyRef Name="uyeID" />
+    </Key>
+    <Property Name="uyeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kullaniciAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="parola" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblTwit" Relationship="Self.fk_b" FromRole="tblUye" ToRole="tblTwit" />
+    <NavigationProperty Name="tblTwitFav" Relationship="Self.fk_c" FromRole="tblUye" ToRole="tblTwitFav" />
+    <NavigationProperty Name="tblUyeTakip" Relationship="Self.fk_d" FromRole="tblUye" ToRole="tblUyeTakip" />
+    <NavigationProperty Name="tblUyeTakip1" Relationship="Self.fk_e" FromRole="tblUye" ToRole="tblUyeTakip" />
+  </EntityType>
+  <EntityType Name="tblUyeTakip">
+    <Key>
+      <PropertyRef Name="uyeTakipID" />
+    </Key>
+    <Property Name="uyeTakipID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="takipEdenID" Type="Int32" />
+    <Property Name="takipEdilenID" Type="Int32" />
+    <NavigationProperty Name="tblUye" Relationship="Self.fk_d" FromRole="tblUyeTakip" ToRole="tblUye" />
+    <NavigationProperty Name="tblUye1" Relationship="Self.fk_e" FromRole="tblUyeTakip" ToRole="tblUye" />
+  </EntityType>
+  <Association Name="fk_b">
+    <End Role="tblUye" Type="Self.tblUye" Multiplicity="0..1" />
+    <End Role="tblTwit" Type="Self.tblTwit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUye">
+        <PropertyRef Name="uyeID" />
+      </Principal>
+      <Dependent Role="tblTwit">
+        <PropertyRef Name="uyeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_c">
+    <End Role="tblUye" Type="Self.tblUye" Multiplicity="0..1" />
+    <End Role="tblTwitFav" Type="Self.tblTwitFav" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUye">
+        <PropertyRef Name="uyeID" />
+      </Principal>
+      <Dependent Role="tblTwitFav">
+        <PropertyRef Name="uyeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_d">
+    <End Role="tblUye" Type="Self.tblUye" Multiplicity="0..1" />
+    <End Role="tblUyeTakip" Type="Self.tblUyeTakip" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUye">
+        <PropertyRef Name="uyeID" />
+      </Principal>
+      <Dependent Role="tblUyeTakip">
+        <PropertyRef Name="takipEdilenID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_e">
+    <End Role="tblUye" Type="Self.tblUye" Multiplicity="0..1" />
+    <End Role="tblUyeTakip" Type="Self.tblUyeTakip" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUye">
+        <PropertyRef Name="uyeID" />
+      </Principal>
+      <Dependent Role="tblUyeTakip">
+        <PropertyRef Name="takipEdenID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="dbTwitterEntitiesSOA" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tblTwit" EntityType="Self.tblTwit" />
+    <EntitySet Name="tblTwitFav" EntityType="Self.tblTwitFav" />
+    <EntitySet Name="tblUye" EntityType="Self.tblUye" />
+    <EntitySet Name="tblUyeTakip" EntityType="Self.tblUyeTakip" />
+    <AssociationSet Name="fk_b" Association="Self.fk_b">
+      <End Role="tblUye" EntitySet="tblUye" />
+      <End Role="tblTwit" EntitySet="tblTwit" />
+    </AssociationSet>
+    <AssociationSet Name="fk_c" Association="Self.fk_c">
+      <End Role="tblUye" EntitySet="tblUye" />
+      <End Role="tblTwitFav" EntitySet="tblTwitFav" />
+    </AssociationSet>
+    <AssociationSet Name="fk_d" Association="Self.fk_d">
+      <End Role="tblUye" EntitySet="tblUye" />
+      <End Role="tblUyeTakip" EntitySet="tblUyeTakip" />
+    </AssociationSet>
+    <AssociationSet Name="fk_e" Association="Self.fk_e">
+      <End Role="tblUye" EntitySet="tblUye" />
+      <End Role="tblUyeTakip" EntitySet="tblUyeTakip" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="twitterservisi" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\yakup\\Desktop\\adsız\ klasör\\TwitterDeneme1\\TwitterDeneme1\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\yakup\\Desktop\\adsız\ klasör\\TwitterDeneme1\\TwitterDeneme1\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="dbTwitterEntitiesSOA-Web.config Connection String" description="" value="metadata=res://*/TweetModelSOA.csdl|res://*/TweetModelSOA.ssdl|res://*/TweetModelSOA.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=demircanfetiye.database.windows.net;initial catalog=dbTwitter;user id=fetiyedemircan;password=1504Fty.;MultipleActiveResultSets=True&quot;" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\yakup\\Desktop\\adsız\ klasör\\TwitterDeneme1\\TwitterDeneme1\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='dbTwitterEntitiesSOA']/@connectionString" />
+  </parameter>
+  <parameter name="twitterEntities-Web.config Connection String" description="" value="metadata=res://*/twitter.csdl|res://*/twitter.ssdl|res://*/twitter.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.;initial catalog=twitter;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\yakup\\Desktop\\adsız\ klasör\\TwitterDeneme1\\TwitterDeneme1\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='twitterEntities']/@connectionString" />
+  </parameter>
+  <parameter name="twitterEntities1-Web.config Connection String" description="" value="metadata=res://*/TweetModel.csdl|res://*/TweetModel.ssdl|res://*/TweetModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.;initial catalog=twitter;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\yakup\\Desktop\\adsız\ klasör\\TwitterDeneme1\\TwitterDeneme1\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='twitterEntities1']/@connectionString" />
+  </parameter>
+  <parameter name="dbTwitterEntities-Web.config Connection String" description="dbTwitterEntities Connection String used in web.config by the application to access the database." value="metadata=res://*/TweetModel.csdl|res://*/TweetModel.ssdl|res://*/TweetModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=demircanfetiye.database.windows.net;initial catalog=dbTwitter;user id=fetiyedemircan;password=1504Fty.;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\yakup\\Desktop\\adsız\ klasör\\TwitterDeneme1\\TwitterDeneme1\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='dbTwitterEntities']/@connectionString" />
+  </parameter>
+</parameters>

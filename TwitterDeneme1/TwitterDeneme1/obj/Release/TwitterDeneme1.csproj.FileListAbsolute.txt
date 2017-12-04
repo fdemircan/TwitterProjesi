@@ -1,0 +1,10 @@
+C:\Users\yakup\Desktop\adsız klasör\TwitterDeneme1\TwitterDeneme1\obj\Release\TwitterDeneme1.csprojResolveAssemblyReference.cache
+C:\Users\yakup\Desktop\adsız klasör\TwitterDeneme1\TwitterDeneme1\bin\TwitterDeneme1.dll.config
+C:\Users\yakup\Desktop\adsız klasör\TwitterDeneme1\TwitterDeneme1\bin\TwitterDeneme1.dll
+C:\Users\yakup\Desktop\adsız klasör\TwitterDeneme1\TwitterDeneme1\bin\TwitterDeneme1.pdb
+C:\Users\yakup\Desktop\adsız klasör\TwitterDeneme1\TwitterDeneme1\bin\EntityFramework.dll
+C:\Users\yakup\Desktop\adsız klasör\TwitterDeneme1\TwitterDeneme1\bin\EntityFramework.SqlServer.dll
+C:\Users\yakup\Desktop\adsız klasör\TwitterDeneme1\TwitterDeneme1\bin\EntityFramework.xml
+C:\Users\yakup\Desktop\adsız klasör\TwitterDeneme1\TwitterDeneme1\bin\EntityFramework.SqlServer.xml
+C:\Users\yakup\Desktop\adsız klasör\TwitterDeneme1\TwitterDeneme1\obj\Release\TwitterDeneme1.dll
+C:\Users\yakup\Desktop\adsız klasör\TwitterDeneme1\TwitterDeneme1\obj\Release\TwitterDeneme1.pdb

@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Twitter" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpsBinding_ITwitter_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://twitterservisi.azurewebsites.net/Twitter.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://twitterservisi.azurewebsites.net/Twitter.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://twitterservisi.azurewebsites.net/Twitter.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/TwitterDeneme1" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ITwitter_KullaniciKayit_InputMessage">
+    <wsdl:part name="parameters" element="tns:KullaniciKayit" />
+  </wsdl:message>
+  <wsdl:message name="ITwitter_KullaniciKayit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:KullaniciKayitResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITwitter_KullaniciGiris_InputMessage">
+    <wsdl:part name="parameters" element="tns:KullaniciGiris" />
+  </wsdl:message>
+  <wsdl:message name="ITwitter_KullaniciGiris_OutputMessage">
+    <wsdl:part name="parameters" element="tns:KullaniciGirisResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITwitter_TwitAt_InputMessage">
+    <wsdl:part name="parameters" element="tns:TwitAt" />
+  </wsdl:message>
+  <wsdl:message name="ITwitter_TwitAt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TwitAtResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITwitter_TwitFav_InputMessage">
+    <wsdl:part name="parameters" element="tns:TwitFav" />
+  </wsdl:message>
+  <wsdl:message name="ITwitter_TwitFav_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TwitFavResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITwitter_UyeTakip_InputMessage">
+    <wsdl:part name="parameters" element="tns:UyeTakip" />
+  </wsdl:message>
+  <wsdl:message name="ITwitter_UyeTakip_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UyeTakipResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITwitter_tumTwitleriCek_InputMessage">
+    <wsdl:part name="parameters" element="tns:tumTwitleriCek" />
+  </wsdl:message>
+  <wsdl:message name="ITwitter_tumTwitleriCek_OutputMessage">
+    <wsdl:part name="parameters" element="tns:tumTwitleriCekResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITwitter_Kullanicilar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Kullanicilar" />
+  </wsdl:message>
+  <wsdl:message name="ITwitter_Kullanicilar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:KullanicilarResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ITwitter">
+    <wsdl:operation name="KullaniciKayit">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITwitter/KullaniciKayit" message="tns:ITwitter_KullaniciKayit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITwitter/KullaniciKayitResponse" message="tns:ITwitter_KullaniciKayit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="KullaniciGiris">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITwitter/KullaniciGiris" message="tns:ITwitter_KullaniciGiris_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITwitter/KullaniciGirisResponse" message="tns:ITwitter_KullaniciGiris_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TwitAt">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITwitter/TwitAt" message="tns:ITwitter_TwitAt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITwitter/TwitAtResponse" message="tns:ITwitter_TwitAt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TwitFav">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITwitter/TwitFav" message="tns:ITwitter_TwitFav_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITwitter/TwitFavResponse" message="tns:ITwitter_TwitFav_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UyeTakip">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITwitter/UyeTakip" message="tns:ITwitter_UyeTakip_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITwitter/UyeTakipResponse" message="tns:ITwitter_UyeTakip_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="tumTwitleriCek">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITwitter/tumTwitleriCek" message="tns:ITwitter_tumTwitleriCek_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITwitter/tumTwitleriCekResponse" message="tns:ITwitter_tumTwitleriCek_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Kullanicilar">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITwitter/Kullanicilar" message="tns:ITwitter_Kullanicilar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITwitter/KullanicilarResponse" message="tns:ITwitter_Kullanicilar_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ITwitter" type="tns:ITwitter">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="KullaniciKayit">
+      <soap:operation soapAction="http://tempuri.org/ITwitter/KullaniciKayit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KullaniciGiris">
+      <soap:operation soapAction="http://tempuri.org/ITwitter/KullaniciGiris" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TwitAt">
+      <soap:operation soapAction="http://tempuri.org/ITwitter/TwitAt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TwitFav">
+      <soap:operation soapAction="http://tempuri.org/ITwitter/TwitFav" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UyeTakip">
+      <soap:operation soapAction="http://tempuri.org/ITwitter/UyeTakip" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="tumTwitleriCek">
+      <soap:operation soapAction="http://tempuri.org/ITwitter/tumTwitleriCek" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Kullanicilar">
+      <soap:operation soapAction="http://tempuri.org/ITwitter/Kullanicilar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpsBinding_ITwitter" type="tns:ITwitter">
+    <wsp:PolicyReference URI="#BasicHttpsBinding_ITwitter_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="KullaniciKayit">
+      <soap:operation soapAction="http://tempuri.org/ITwitter/KullaniciKayit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KullaniciGiris">
+      <soap:operation soapAction="http://tempuri.org/ITwitter/KullaniciGiris" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TwitAt">
+      <soap:operation soapAction="http://tempuri.org/ITwitter/TwitAt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TwitFav">
+      <soap:operation soapAction="http://tempuri.org/ITwitter/TwitFav" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UyeTakip">
+      <soap:operation soapAction="http://tempuri.org/ITwitter/UyeTakip" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="tumTwitleriCek">
+      <soap:operation soapAction="http://tempuri.org/ITwitter/tumTwitleriCek" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Kullanicilar">
+      <soap:operation soapAction="http://tempuri.org/ITwitter/Kullanicilar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Twitter">
+    <wsdl:port name="BasicHttpBinding_ITwitter" binding="tns:BasicHttpBinding_ITwitter">
+      <soap:address location="http://twitterservisi.azurewebsites.net/Twitter.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpsBinding_ITwitter" binding="tns:BasicHttpsBinding_ITwitter">
+      <soap:address location="https://twitterservisi.azurewebsites.net/Twitter.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
